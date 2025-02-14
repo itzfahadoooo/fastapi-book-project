@@ -23,18 +23,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          password: ${{ secrets.EC2_PASSWORD }}
-          script: |
-            cd /home/kingfahad/fastapi-book-project
-
-            git pull origin main
-            # If using a virtual environment, activate and install dependencies
-            source venv/bin/activate
-            pip install -r requirements.txt
-            # Restart the service (example for systemd)
-            sudo systemctl restart your-fastapi-service
+      - name: Deploy the API
+        run: |
+          # Add your deployment command here, for example, if using Docker:
+          # docker-compose up -d
+          
+          # If deploying to a cloud service, you would include their CLI commands here.
