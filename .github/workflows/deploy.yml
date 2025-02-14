@@ -27,7 +27,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
+          username: ubuntu
           password: ${{ secrets.EC2_PASSWORD }}
           script: |
             cd /home/kingfahad/fastapi-book-project
